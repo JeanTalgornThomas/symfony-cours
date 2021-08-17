@@ -33,7 +33,7 @@ CREATE TABLE `achats` (
   `id_boutiques` int NOT NULL,
   `id_utilisateurs` int NOT NULL,
   `date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -46,7 +46,7 @@ CREATE TABLE `adoptions` (
   `id_animaux` int NOT NULL,
   `id_utilisateurs` int NOT NULL,
   `date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -61,7 +61,7 @@ CREATE TABLE `animaux` (
   `race` varchar(255) NOT NULL,
   `age` int NOT NULL,
   `poids` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Déchargement des données de la table `animaux`
@@ -89,8 +89,8 @@ CREATE TABLE `articles` (
   `id` int NOT NULL,
   `nom` varchar(255) NOT NULL,
   `date` datetime NOT NULL,
-  `contenu` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `contenu` text NOT NULL
+);
 
 --
 -- Déchargement des données de la table `articles`
@@ -120,7 +120,7 @@ CREATE TABLE `boutiques` (
   `nom` varchar(255) NOT NULL,
   `valeurs` float NOT NULL,
   `stocks` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Déchargement des données de la table `boutiques`
@@ -146,7 +146,7 @@ CREATE TABLE `dons` (
   `montants` float NOT NULL,
   `date` datetime NOT NULL,
   `id_utilisateurs` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -160,7 +160,7 @@ CREATE TABLE `utilisateurs` (
   `prenom` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `mot_de_passe` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Index pour les tables déchargées

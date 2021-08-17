@@ -230,3 +230,11 @@ fbf66a,127.0.0.1,GET,http://localhost:8000/showBoutiquesAccessoires,1624626816,,
 a8529d,127.0.0.1,GET,http://localhost:8000/showBoutiquesNourritures,1624626821,,200
 3ee29f,127.0.0.1,GET,http://localhost:8000/showOneBoutiques/1,1624626824,,200
 85e084,127.0.0.1,GET,http://localhost:8000/showAnimaux,1624626833,,200
+521e4d,127.0.0.1,GET,http://localhost:8000/,1629203650,,200
+d3c350,127.0.0.1,GET,http://localhost:8000/favicon.ico,1629203663,7307d9,404
+7307d9,127.0.0.1,GET,http://localhost:8000/favicon.ico,1629203663,,404
+aa0d52,127.0.0.1,GET,http://localhost:8000/,1629203665,,200
+46b983,127.0.0.1,GET,http://localhost:8000/favicon.ico,1629203668,5046d6,404
+5046d6,127.0.0.1,GET,http://localhost:8000/favicon.ico,1629203668,,404
+3e4d97,127.0.0.1,GET,http://localhost:8000/showAnimaux,1629203828,,200
+430ed3,127.0.0.1,GET,http://localhost:8000/,1629203833,,200
