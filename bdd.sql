@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5deb2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:3306
--- Généré le : mar. 22 juin 2021 à 16:13
--- Version du serveur :  8.0.25-0ubuntu0.20.04.1
--- Version de PHP : 7.4.3
+-- Hôte : 127.0.0.1:3306
+-- Généré le : mar. 17 août 2021 à 13:17
+-- Version du serveur :  5.7.31
+-- Version de PHP : 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -28,56 +27,14 @@ SET time_zone = "+00:00";
 -- Structure de la table `achats`
 --
 
-CREATE TABLE `achats` (
-  `id` int NOT NULL,
-  `id_boutiques` int NOT NULL,
-  `id_utilisateurs` int NOT NULL,
-  `date` datetime NOT NULL
-);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `adoptions`
---
-
-CREATE TABLE `adoptions` (
-  `id` int NOT NULL,
-  `id_animaux` int NOT NULL,
-  `id_utilisateurs` int NOT NULL,
-  `date` datetime NOT NULL
-);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `animaux`
---
-
-CREATE TABLE `animaux` (
-  `id` int NOT NULL,
-  `type` varchar(255) NOT NULL,
-  `nom` varchar(255) NOT NULL,
-  `race` varchar(255) NOT NULL,
-  `age` int NOT NULL,
-  `poids` float NOT NULL
-);
-
---
--- Déchargement des données de la table `animaux`
---
-
-INSERT INTO `animaux` (`id`, `type`, `nom`, `race`, `age`, `poids`) VALUES
-(1, 'chats', 'Paulette', 'Europeen', 10, 12),
-(2, 'chats', 'Reynabel', 'Europeen', 4, 12),
-(3, 'chats', 'Marguerite', 'Europeen', 5, 10),
-(4, 'chats', 'Withney', 'Europeen', 5, 6),
-(5, 'chats', 'Andromie', 'Europeen', 4, 11),
-(6, 'chats', 'Mercure', 'Europeen', 7, 13),
-(7, 'chats', 'Fred', 'Europeen', 8, 12),
-(8, 'chats', 'Agate', 'Europeen', 4, 12),
-(9, 'chats', 'Mikado', 'Europeen', 5, 12),
-(10, 'chats', 'Toffee', 'Europeen', 5, 11);
+DROP TABLE IF EXISTS `achats`;
+CREATE TABLE IF NOT EXISTS `achats` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_boutiques` int(11) NOT NULL,
+  `id_utilisateurs` int(11) NOT NULL,
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -85,12 +42,14 @@ INSERT INTO `animaux` (`id`, `type`, `nom`, `race`, `age`, `poids`) VALUES
 -- Structure de la table `articles`
 --
 
-CREATE TABLE `articles` (
-  `id` int NOT NULL,
+DROP TABLE IF EXISTS `articles`;
+CREATE TABLE IF NOT EXISTS `articles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) NOT NULL,
   `date` datetime NOT NULL,
-  `contenu` text NOT NULL
-);
+  `contenu` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `articles`
@@ -114,26 +73,28 @@ INSERT INTO `articles` (`id`, `nom`, `date`, `contenu`) VALUES
 -- Structure de la table `boutiques`
 --
 
-CREATE TABLE `boutiques` (
-  `id` int NOT NULL,
+DROP TABLE IF EXISTS `boutiques`;
+CREATE TABLE IF NOT EXISTS `boutiques` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(255) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `valeurs` float NOT NULL,
-  `stocks` int NOT NULL
-);
+  `stocks` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `boutiques`
 --
 
 INSERT INTO `boutiques` (`id`, `type`, `nom`, `valeurs`, `stocks`) VALUES
-(1, 'Nourritures', 'Royal Canin Sterilised 37 pour chat', 18.99, 13),
-(2, 'Accessoires', 'Litière Cat\'s Best Original pour chat', 8.49, 30),
-(3, 'Nourritures', 'Royal Canin Veterinary Diet Urinary S/O pour chat', 15.49, 24),
-(4, 'Accessoires', 'Cage de transport Trixie Gulliver pour chien et chat', 59.99, 22),
-(5, 'Accessoires', 'Ferplast Siesta Deluxe avec housse Sofà vert velours pour chien et chat', 32.99, 22),
-(6, 'Jouer', 'Arbre à chat Natural Home', 32.99, 13),
-(7, 'Jouer', 'Jouet KONG Extreme pour chien', 8.19, 112);
+(1, 'Produits', 'Gel hydroalcoolique 30 ml', 1.3, 13),
+(2, 'Produits', 'Gel hydroalcoolique 1 Litre', 8.49, 30),
+(3, 'Produits', '4 Flacons de 500ml - Gel Hydroalcoolique Purity', 15.49, 24),
+(4, 'Accessoires', '50 masques chirurgicaux bleus', 59.99, 22),
+(5, 'Accessoires', 'LOT (10 pcs) Masque CHIRURGICAL ADULTE NOIR', 32.99, 22),
+(6, 'Accessoires', 'Thermomètre Frontal Adulte IDOIT Thermometre', 32.99, 13),
+(7, 'Produits', 'GEL HYDROALCOOLIQUE 5L AVEC POMPE', 8.19, 112);
 
 -- --------------------------------------------------------
 
@@ -141,12 +102,14 @@ INSERT INTO `boutiques` (`id`, `type`, `nom`, `valeurs`, `stocks`) VALUES
 -- Structure de la table `dons`
 --
 
-CREATE TABLE `dons` (
-  `id` int NOT NULL,
+DROP TABLE IF EXISTS `dons`;
+CREATE TABLE IF NOT EXISTS `dons` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `montants` float NOT NULL,
   `date` datetime NOT NULL,
-  `id_utilisateurs` int NOT NULL
-);
+  `id_utilisateurs` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -154,105 +117,15 @@ CREATE TABLE `dons` (
 -- Structure de la table `utilisateurs`
 --
 
-CREATE TABLE `utilisateurs` (
-  `id` int NOT NULL,
+DROP TABLE IF EXISTS `utilisateurs`;
+CREATE TABLE IF NOT EXISTS `utilisateurs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) NOT NULL,
   `prenom` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `mot_de_passe` varchar(255) NOT NULL
-);
-
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `achats`
---
-ALTER TABLE `achats`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `adoptions`
---
-ALTER TABLE `adoptions`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `animaux`
---
-ALTER TABLE `animaux`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `articles`
---
-ALTER TABLE `articles`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `boutiques`
---
-ALTER TABLE `boutiques`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `dons`
---
-ALTER TABLE `dons`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `utilisateurs`
---
-ALTER TABLE `utilisateurs`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `achats`
---
-ALTER TABLE `achats`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `adoptions`
---
-ALTER TABLE `adoptions`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `animaux`
---
-ALTER TABLE `animaux`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT pour la table `articles`
---
-ALTER TABLE `articles`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT pour la table `boutiques`
---
-ALTER TABLE `boutiques`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT pour la table `dons`
---
-ALTER TABLE `dons`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `utilisateurs`
---
-ALTER TABLE `utilisateurs`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  `mot_de_passe` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

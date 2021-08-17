@@ -101,6 +101,42 @@ class __TwigTemplate_fe3f08ca6e16ff3a9002eafe2e0393c0e4c6b41e677bc11180ba8a2a5c7
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 18
         echo "</div>
+<h3> Nos dernier produits </h3>
+<div class=\"row\">
+  ";
+        // line 21
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["boutiques"]) || array_key_exists("boutiques", $context) ? $context["boutiques"] : (function () { throw new RuntimeError('Variable "boutiques" does not exist.', 21, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["produit"]) {
+            // line 22
+            echo "      <div class=\"col-2\">
+          <div class=\"thumbnail\">
+              <a href=\"";
+            // line 24
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showOneBoutiques", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 24)]), "html", null, true);
+            echo "\">
+                  <img src=\"/images/boutiques/";
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 25), "html", null, true);
+            echo ".jpg\" alt=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 25), "html", null, true);
+            echo "\" style=\"width:100%\">
+                  <div class=\"caption text-center\">
+                      <p>";
+            // line 27
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 27), "html", null, true);
+            echo "</p>
+                  </div>
+              </a>
+          </div>
+      </div>
+  ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['produit'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 33
+        echo "</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -122,7 +158,7 @@ class __TwigTemplate_fe3f08ca6e16ff3a9002eafe2e0393c0e4c6b41e677bc11180ba8a2a5c7
 
     public function getDebugInfo()
     {
-        return array (  103 => 18,  91 => 12,  84 => 10,  80 => 9,  76 => 7,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  139 => 33,  127 => 27,  120 => 25,  116 => 24,  112 => 22,  108 => 21,  103 => 18,  91 => 12,  84 => 10,  80 => 9,  76 => 7,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -139,6 +175,21 @@ class __TwigTemplate_fe3f08ca6e16ff3a9002eafe2e0393c0e4c6b41e677bc11180ba8a2a5c7
                   <img src=\"/images/articles/{{article.id}}.jpg\" alt=\"{{article.nom}}\" style=\"width:100%\">
                   <div class=\"caption text-center\">
                       <p>{{ article.nom }}</p>
+                  </div>
+              </a>
+          </div>
+      </div>
+  {% endfor %}
+</div>
+<h3> Nos dernier produits </h3>
+<div class=\"row\">
+  {% for produit in boutiques %}
+      <div class=\"col-2\">
+          <div class=\"thumbnail\">
+              <a href=\"{{ path('showOneBoutiques', {id: produit.id}) }}\">
+                  <img src=\"/images/boutiques/{{produit.id}}.jpg\" alt=\"{{produit.nom}}\" style=\"width:100%\">
+                  <div class=\"caption text-center\">
+                      <p>{{ produit.nom }}</p>
                   </div>
               </a>
           </div>

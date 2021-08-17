@@ -280,3 +280,8 @@ ea503c,127.0.0.1,GET,http://localhost:8000/,1629205693,,200
 4cc5e7,127.0.0.1,GET,http://localhost:8000/addDons,1629205736,,302
 8890b4,127.0.0.1,GET,http://localhost:8000/showArticles,1629205737,,200
 72996b,127.0.0.1,GET,http://localhost:8000/,1629205739,,200
+e44203,127.0.0.1,GET,http://localhost:8000/showArticles,1629205819,,200
+d57fea,127.0.0.1,GET,http://localhost:8000/,1629205830,,200
+e78608,127.0.0.1,GET,http://localhost:8000/,1629206080,,200
+ad23ce,127.0.0.1,GET,http://localhost:8000/showBoutiques,1629206123,,200
+1fb77a,127.0.0.1,GET,http://localhost:8000/,1629206151,,200

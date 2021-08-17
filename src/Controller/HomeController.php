@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 use App\Entity\Articles;
-use App\Entity\Animaux;
+use App\Entity\Boutiques;
 use Doctrine\ORM\EntityManagerInterface;
 
 class HomeController extends AbstractController {
@@ -31,6 +31,17 @@ class HomeController extends AbstractController {
       return $resultat = false;
     }
 
+    try
+    {
+      $resultatBoutiques = $this->mysql
+      ->getRepository(Boutiques::class)
+      ->findAll();
+    }
+    catch ( Doctrine_Connection_Exception $e )
+    {
+      return $resultat = false;
+    }
+
 
     if ($resultatArticles != false) {
 
@@ -42,8 +53,17 @@ class HomeController extends AbstractController {
         );
       }
 
+      // Récupération des 5 derniers produits
+      for($counter = 0; $counter <= 5; $counter++) {
+        $resultatBoutiques[$counter] = array(
+          "id" => $resultatBoutiques[$counter]->getId(),
+          "nom" => $resultatBoutiques[$counter]->getNom()
+        );
+      }
+
       return $this->render('home.html.twig', [
-        'articles' => $returnArticles
+        'articles' => $returnArticles,
+        'boutiques' => $resultatBoutiques
       ]);
     }
     else
