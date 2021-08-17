@@ -77,7 +77,7 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
         </div -->
         <header>
             <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
-                <a class=\"navbar-brand\" href=\"/\"><img src=\"https://www.la-spa.fr/sites/all/themes/bluemasters/logo.png\"> </a>
+                <a class=\"navbar-brand\" href=\"/\" style=\"padding-left: 20px;\">Anti-Covid</a>
                 <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                     <span class=\"navbar-toggler-icon\"></span>
                 </button>
@@ -85,9 +85,6 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
                     <ul class=\"navbar-nav mr-auto\">
                         <li class=\"nav-item active\">
                             <a class=\"nav-link\" href=\"/\">Home <span class=\"sr-only\"></span></a>
-                        </li>
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"/showAnimaux\">Adoptions</a>
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"/showBoutiques\">Boutiques</a>
@@ -100,40 +97,40 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
                         </li>
                         <li class=\"nav-item\">
                             ";
-        // line 51
+        // line 48
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 52
+            // line 49
             echo "                \t            <a class=\"nav-link\" href=";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo ">Déconnexion</a>
 \t\t\t\t            ";
         } else {
-            // line 54
+            // line 51
             echo "                \t            <a class=\"nav-link\" href=";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo ">Se connecter</a>
                                 <a class=\"nav-link\" href=";
-            // line 55
+            // line 52
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
             echo ">S'Enregistrer</a>
 \t\t\t\t            ";
         }
-        // line 57
+        // line 54
         echo "                        </li>
                     </ul>
                 </div>
             </nav>
         </header>
         ";
-        // line 62
+        // line 59
         $this->displayBlock('body', $context, $blocks);
-        // line 63
+        // line 60
         echo "    </body>
     <div>
         ";
-        // line 65
+        // line 62
         $this->displayBlock('footer', $context, $blocks);
-        // line 68
+        // line 65
         echo "    </div>
 </html>
 ";
@@ -209,7 +206,7 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
 
     }
 
-    // line 62
+    // line 59
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -227,7 +224,7 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
 
     }
 
-    // line 65
+    // line 62
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -237,8 +234,8 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 66
-        echo "            La SPA.fr &copy; Copyright 2021.
+        // line 63
+        echo "            Anti-Covid &copy; Copyright 2021.
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -260,7 +257,7 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
 
     public function getDebugInfo()
     {
-        return array (  241 => 66,  231 => 65,  213 => 62,  203 => 13,  201 => 12,  191 => 11,  180 => 8,  178 => 7,  168 => 6,  149 => 5,  137 => 68,  135 => 65,  131 => 63,  129 => 62,  122 => 57,  117 => 55,  112 => 54,  106 => 52,  104 => 51,  65 => 14,  63 => 11,  60 => 10,  58 => 6,  54 => 5,  48 => 1,);
+        return array (  238 => 63,  228 => 62,  210 => 59,  200 => 13,  198 => 12,  188 => 11,  177 => 8,  175 => 7,  165 => 6,  146 => 5,  134 => 65,  132 => 62,  128 => 60,  126 => 59,  119 => 54,  114 => 52,  109 => 51,  103 => 49,  101 => 48,  65 => 14,  63 => 11,  60 => 10,  58 => 6,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -293,7 +290,7 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
         </div -->
         <header>
             <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
-                <a class=\"navbar-brand\" href=\"/\"><img src=\"https://www.la-spa.fr/sites/all/themes/bluemasters/logo.png\"> </a>
+                <a class=\"navbar-brand\" href=\"/\" style=\"padding-left: 20px;\">Anti-Covid</a>
                 <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                     <span class=\"navbar-toggler-icon\"></span>
                 </button>
@@ -301,9 +298,6 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
                     <ul class=\"navbar-nav mr-auto\">
                         <li class=\"nav-item active\">
                             <a class=\"nav-link\" href=\"/\">Home <span class=\"sr-only\"></span></a>
-                        </li>
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"/showAnimaux\">Adoptions</a>
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"/showBoutiques\">Boutiques</a>
@@ -330,7 +324,7 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
     </body>
     <div>
         {% block footer %}
-            La SPA.fr &copy; Copyright 2021.
+            Anti-Covid &copy; Copyright 2021.
         {% endblock %}
     </div>
 </html>

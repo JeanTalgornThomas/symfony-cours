@@ -87,19 +87,14 @@ class __TwigTemplate_2662ed5d529cf9c03e9fe959790ec064434eb22fc8472cd977aba4a5f75
         // line 6
         echo "  <div class=\"row\">
     <div class=\"col text-center\">
-      <a href=\"/showBoutiquesNourritures\">
-      <img src=\"/images/boutiques/1.jpg\" style=\"width:50%\"/><br/>
-      Nourritures</a>
-    </div>
-    <div class=\"col text-center\">
       <a href=\"/showBoutiquesAccessoires\">
-      <img src=\"/images/boutiques/2.jpg\" style=\"width:50%\"/><br/>
+      <img src=\"/images/boutiques/6.jpg\" style=\"width:50%\"/><br/>
       Accessoires</a>
     </div>
     <div class=\"col text-center\">
       <a href=\"/showBoutiquesProduits\">
-      <img src=\"/images/boutiques/6.jpg\" style=\"width:50%\"/><br/>
-      Jouer</a>
+      <img src=\"/images/boutiques/2.jpg\" style=\"width:50%\"/><br/>
+      Produits</a>
     </div>
   </div>
 ";
@@ -135,19 +130,14 @@ class __TwigTemplate_2662ed5d529cf9c03e9fe959790ec064434eb22fc8472cd977aba4a5f75
 {% block body %}
   <div class=\"row\">
     <div class=\"col text-center\">
-      <a href=\"/showBoutiquesNourritures\">
-      <img src=\"/images/boutiques/1.jpg\" style=\"width:50%\"/><br/>
-      Nourritures</a>
-    </div>
-    <div class=\"col text-center\">
       <a href=\"/showBoutiquesAccessoires\">
-      <img src=\"/images/boutiques/2.jpg\" style=\"width:50%\"/><br/>
+      <img src=\"/images/boutiques/6.jpg\" style=\"width:50%\"/><br/>
       Accessoires</a>
     </div>
     <div class=\"col text-center\">
       <a href=\"/showBoutiquesProduits\">
-      <img src=\"/images/boutiques/6.jpg\" style=\"width:50%\"/><br/>
-      Jouer</a>
+      <img src=\"/images/boutiques/2.jpg\" style=\"width:50%\"/><br/>
+      Produits</a>
     </div>
   </div>
 {% endblock %}

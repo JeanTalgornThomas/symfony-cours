@@ -65,70 +65,30 @@ class __TwigTemplate_fe3f08ca6e16ff3a9002eafe2e0393c0e4c6b41e677bc11180ba8a2a5c7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "<h3> Nos dernier animaux </h3>
+        echo "<h3> Nos dernier articles </h3>
 <div class=\"row\">
   ";
         // line 6
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["animaux"]) || array_key_exists("animaux", $context) ? $context["animaux"] : (function () { throw new RuntimeError('Variable "animaux" does not exist.', 6, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["animal"]) {
+        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 6, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
             // line 7
             echo "      <div class=\"col-2\">
           <div class=\"thumbnail\">
               <a href=\"";
             // line 9
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showOneAnimaux", ["id" => twig_get_attribute($this->env, $this->source, $context["animal"], "id", [], "any", false, false, false, 9)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showOneArticles", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 9)]), "html", null, true);
             echo "\">
-                  <img src=\"/images/animaux/";
+                  <img src=\"/images/articles/";
             // line 10
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "id", [], "any", false, false, false, 10), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 10), "html", null, true);
             echo ".jpg\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "nom", [], "any", false, false, false, 10), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "nom", [], "any", false, false, false, 10), "html", null, true);
             echo "\" style=\"width:100%\">
                   <div class=\"caption text-center\">
                       <p>";
             // line 12
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "nom", [], "any", false, false, false, 12), "html", null, true);
-            echo "</p>
-                      <p>";
-            // line 13
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "age", [], "any", false, false, false, 13), "html", null, true);
-            echo " ans</p>
-                  </div>
-              </a>
-          </div>
-      </div>
-  ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['animal'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 19
-        echo "</div>
-<h3> Nos dernier articles </h3>
-<div class=\"row\">
-  ";
-        // line 22
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 22, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
-            // line 23
-            echo "      <div class=\"col-2\">
-          <div class=\"thumbnail\">
-              <a href=\"";
-            // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showOneArticles", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 25)]), "html", null, true);
-            echo "\">
-                  <img src=\"/images/articles/";
-            // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 26), "html", null, true);
-            echo ".jpg\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "nom", [], "any", false, false, false, 26), "html", null, true);
-            echo "\" style=\"width:100%\">
-                  <div class=\"caption text-center\">
-                      <p>";
-            // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "nom", [], "any", false, false, false, 28), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "nom", [], "any", false, false, false, 12), "html", null, true);
             echo "</p>
                   </div>
               </a>
@@ -139,7 +99,7 @@ class __TwigTemplate_fe3f08ca6e16ff3a9002eafe2e0393c0e4c6b41e677bc11180ba8a2a5c7
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
+        // line 18
         echo "</div>
 ";
         
@@ -162,7 +122,7 @@ class __TwigTemplate_fe3f08ca6e16ff3a9002eafe2e0393c0e4c6b41e677bc11180ba8a2a5c7
 
     public function getDebugInfo()
     {
-        return array (  143 => 34,  131 => 28,  124 => 26,  120 => 25,  116 => 23,  112 => 22,  107 => 19,  95 => 13,  91 => 12,  84 => 10,  80 => 9,  76 => 7,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  103 => 18,  91 => 12,  84 => 10,  80 => 9,  76 => 7,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -170,22 +130,6 @@ class __TwigTemplate_fe3f08ca6e16ff3a9002eafe2e0393c0e4c6b41e677bc11180ba8a2a5c7
         return new Source("{% extends \"base.html.twig\" %}
 
 {% block body %}
-<h3> Nos dernier animaux </h3>
-<div class=\"row\">
-  {% for animal in animaux %}
-      <div class=\"col-2\">
-          <div class=\"thumbnail\">
-              <a href=\"{{ path('showOneAnimaux', {id: animal.id}) }}\">
-                  <img src=\"/images/animaux/{{animal.id}}.jpg\" alt=\"{{animal.nom}}\" style=\"width:100%\">
-                  <div class=\"caption text-center\">
-                      <p>{{ animal.nom }}</p>
-                      <p>{{ animal.age }} ans</p>
-                  </div>
-              </a>
-          </div>
-      </div>
-  {% endfor %}
-</div>
 <h3> Nos dernier articles </h3>
 <div class=\"row\">
   {% for article in articles %}

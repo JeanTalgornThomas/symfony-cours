@@ -31,19 +31,8 @@ class HomeController extends AbstractController {
       return $resultat = false;
     }
 
-    try
-    {
-      $resultatAnimaux = $this->mysql
-      ->getRepository(Animaux::class)
-      ->findAll();
-    }
-    catch ( Doctrine_Connection_Exception $e )
-    {
-      return $resultat = false;
-    }
 
-
-    if ($resultatAnimaux != false && $resultatArticles != false) {
+    if ($resultatArticles != false) {
 
       // Récupération des 5 derniers articles
       for($counter = 0; $counter <= 5; $counter++) {
@@ -53,18 +42,8 @@ class HomeController extends AbstractController {
         );
       }
 
-      // Récupération des 5 derniers animaux
-      for($counter = 0; $counter <= 5; $counter++) {
-        $returnAnimaux[$counter] = array(
-          "id" => $resultatAnimaux[$counter]->getId(),
-          "nom" => $resultatAnimaux[$counter]->getNom(),
-          "age" => $resultatAnimaux[$counter]->getAge()
-        );
-      }
-
       return $this->render('home.html.twig', [
-        'articles' => $returnArticles,
-        'animaux' => $returnAnimaux
+        'articles' => $returnArticles
       ]);
     }
     else

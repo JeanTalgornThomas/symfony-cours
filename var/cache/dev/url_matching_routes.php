@@ -14,10 +14,8 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/addAchats' => [[['_route' => 'addAchats', '_controller' => 'App\\Controller\\AchatsController::addAchats'], null, null, null, false, false, null]],
-        '/showAnimaux' => [[['_route' => 'showAnimaux', '_controller' => 'App\\Controller\\AnimauxController::showAnimaux'], null, null, null, false, false, null]],
         '/showArticles' => [[['_route' => 'showArticles', '_controller' => 'App\\Controller\\ArticlesController::showArticles'], null, null, null, false, false, null]],
         '/showBoutiques' => [[['_route' => 'showBoutiques', '_controller' => 'App\\Controller\\BoutiquesController::showBoutiques'], null, null, null, false, false, null]],
-        '/showBoutiquesNourritures' => [[['_route' => 'showBoutiquesNourritures', '_controller' => 'App\\Controller\\BoutiquesController::showBoutiquesNourritures'], null, null, null, false, false, null]],
         '/showBoutiquesAccessoires' => [[['_route' => 'boutiquesAccessoires', '_controller' => 'App\\Controller\\BoutiquesController::showBoutiquesAccessoires'], null, null, null, false, false, null]],
         '/showBoutiquesProduits' => [[['_route' => 'boutiquesProduits', '_controller' => 'App\\Controller\\BoutiquesController::showBoutiquesProduits'], null, null, null, false, false, null]],
         '/addDons' => [[['_route' => 'addDons', '_controller' => 'App\\Controller\\DonsController::addDons'], null, null, null, false, false, null]],
@@ -43,15 +41,11 @@ return [
                     .')'
                     .'|error/(\\d+)(?:\\.([^/]++))?(*:159)'
                 .')'
-                .'|/adopter/([^/]++)(*:185)'
                 .'|/showOne(?'
-                    .'|A(?'
-                        .'|nimaux/([^/]++)(*:223)'
-                        .'|rticles/([^/]++)(*:247)'
-                    .')'
-                    .'|Boutiques/([^/]++)(*:274)'
+                    .'|Articles/([^/]++)(*:196)'
+                    .'|Boutiques/([^/]++)(*:222)'
                 .')'
-                .'|/panier/add/([^/]++)(*:303)'
+                .'|/panier/add/([^/]++)(*:251)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -62,11 +56,9 @@ return [
         114 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         124 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         159 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        185 => [[['_route' => 'adopter', '_controller' => 'App\\Controller\\AdoptionsController::adopter'], ['id'], null, null, false, true, null]],
-        223 => [[['_route' => 'showOneAnimaux', '_controller' => 'App\\Controller\\AnimauxController::showOneAnimaux'], ['id'], null, null, false, true, null]],
-        247 => [[['_route' => 'showOneArticles', '_controller' => 'App\\Controller\\ArticlesController::showOneArticles'], ['id'], null, null, false, true, null]],
-        274 => [[['_route' => 'showOneBoutiques', '_controller' => 'App\\Controller\\BoutiquesController::showOneBoutiques'], ['id'], null, null, false, true, null]],
-        303 => [
+        196 => [[['_route' => 'showOneArticles', '_controller' => 'App\\Controller\\ArticlesController::showOneArticles'], ['id'], null, null, false, true, null]],
+        222 => [[['_route' => 'showOneBoutiques', '_controller' => 'App\\Controller\\BoutiquesController::showOneBoutiques'], ['id'], null, null, false, true, null]],
+        251 => [
             [['_route' => 'Addpanier', '_controller' => 'App\\Controller\\CartController::add'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

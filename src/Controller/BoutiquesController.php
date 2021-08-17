@@ -50,34 +50,6 @@ class BoutiquesController extends AbstractController {
   }
 
   /**
-   * @Route("/showBoutiquesNourritures", name="showBoutiquesNourritures")
-  */
-  function showBoutiquesNourritures() 
-  {
-    try 
-    {
-      $resultat = $this->mysql
-      ->getRepository(Boutiques::class)
-      ->findBy(['type' => 'Nourritures']);
-    }
-    catch ( Doctrine_Connection_Exception $e )
-    {
-      return $resultat = false;
-    } 
-    
-    if ($resultat != false) 
-    {
-      return $this->render('boutiquesNourritures.html.twig', [
-        'BoutiquesNourritures' => $resultat
-      ]);
-    }
-    else
-    {
-      return $this->redirectToRoute("home");
-    }
-  }
-
-  /**
    * @Route("/showBoutiquesAccessoires", name="boutiquesAccessoires")
   */
   function showBoutiquesAccessoires() 
@@ -114,7 +86,7 @@ class BoutiquesController extends AbstractController {
     {
       $resultat = $this->mysql
       ->getRepository(Boutiques::class)
-      ->findBy(['type' => 'Jouer']);
+      ->findBy(['type' => 'Produits']);
     }
     catch ( Doctrine_Connection_Exception $e )
     {

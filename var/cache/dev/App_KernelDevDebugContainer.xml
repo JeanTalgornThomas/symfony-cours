@@ -348,22 +348,6 @@
         <argument type="service" id=".service_locator.W9y3dzm.App\Controller\AchatsController"/>
       </call>
     </service>
-    <service id="App\Controller\AdoptionsController" class="App\Controller\AdoptionsController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <argument type="service" id="doctrine.orm.default_entity_manager"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\AdoptionsController"/>
-      </call>
-    </service>
-    <service id="App\Controller\AnimauxController" class="App\Controller\AnimauxController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <argument type="service" id="doctrine.orm.default_entity_manager"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\AnimauxController"/>
-      </call>
-    </service>
     <service id="App\Controller\ArticlesController" class="App\Controller\ArticlesController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -425,14 +409,6 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Repository\AchatsRepository" class="App\Repository\AchatsRepository" autowire="true" autoconfigure="true">
-      <tag name="doctrine.repository_service"/>
-      <argument type="service" id="doctrine"/>
-    </service>
-    <service id="App\Repository\AdoptionsRepository" class="App\Repository\AdoptionsRepository" autowire="true" autoconfigure="true">
-      <tag name="doctrine.repository_service"/>
-      <argument type="service" id="doctrine"/>
-    </service>
-    <service id="App\Repository\AnimauxRepository" class="App\Repository\AnimauxRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -4523,7 +4499,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.p52Ralm"/>
+      <argument type="service" id=".service_locator.aJti.3q"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5773,12 +5749,6 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AchatsController" class="App\Controller\AchatsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AchatsController" class="App\Controller\AchatsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AchatsController" class="App\Controller\AchatsController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdoptionsController" class="App\Controller\AdoptionsController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdoptionsController" class="App\Controller\AdoptionsController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\AdoptionsController" class="App\Controller\AdoptionsController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AnimauxController" class="App\Controller\AnimauxController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AnimauxController" class="App\Controller\AnimauxController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\AnimauxController" class="App\Controller\AnimauxController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ArticlesController" class="App\Controller\ArticlesController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ArticlesController" class="App\Controller\ArticlesController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ArticlesController" class="App\Controller\ArticlesController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5806,10 +5776,6 @@
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AchatsRepository" class="App\Repository\AchatsRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AchatsRepository" class="App\Repository\AchatsRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AdoptionsRepository" class="App\Repository\AdoptionsRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\AdoptionsRepository" class="App\Repository\AdoptionsRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AnimauxRepository" class="App\Repository\AnimauxRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\AnimauxRepository" class="App\Repository\AnimauxRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ArticlesRepository" class="App\Repository\ArticlesRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ArticlesRepository" class="App\Repository\ArticlesRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BoutiquesRepository" class="App\Repository\BoutiquesRepository" autowire="true" abstract="true"/>
@@ -6158,11 +6124,10 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.G617SlR" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.3GKtnbC" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AchatsController::addAchats" type="service_closure" id=".service_locator.PrwvJHB"/>
-        <argument key="App\Controller\AdoptionsController::adopter" type="service_closure" id=".service_locator.CpaXrFh"/>
         <argument key="App\Controller\DonsController::addDons" type="service_closure" id=".service_locator.CpaXrFh"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.pwZ6MTM"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.UDgw6Ol"/>
@@ -6173,7 +6138,6 @@
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::terminate" type="service_closure" id=".service_locator.KfwZsne"/>
         <argument key="App\Controller\AchatsController:addAchats" type="service_closure" id=".service_locator.PrwvJHB"/>
-        <argument key="App\Controller\AdoptionsController:adopter" type="service_closure" id=".service_locator.CpaXrFh"/>
         <argument key="App\Controller\DonsController:addDons" type="service_closure" id=".service_locator.CpaXrFh"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.pwZ6MTM"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.UDgw6Ol"/>
@@ -6436,12 +6400,10 @@
       <argument type="service" id="cache.doctrine.orm.default.result"/>
       <factory class="Doctrine\Common\Cache\Psr6\DoctrineProvider" method="wrap"/>
     </service>
-    <service id=".service_locator.p52Ralm" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.aJti.3q" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AchatsRepository" type="service_closure" id="App\Repository\AchatsRepository"/>
-        <argument key="App\Repository\AdoptionsRepository" type="service_closure" id="App\Repository\AdoptionsRepository"/>
-        <argument key="App\Repository\AnimauxRepository" type="service_closure" id="App\Repository\AnimauxRepository"/>
         <argument key="App\Repository\ArticlesRepository" type="service_closure" id="App\Repository\ArticlesRepository"/>
         <argument key="App\Repository\BoutiquesRepository" type="service_closure" id="App\Repository\BoutiquesRepository"/>
         <argument key="App\Repository\DonsRepository" type="service_closure" id="App\Repository\DonsRepository"/>
@@ -6518,18 +6480,6 @@
     <service id=".service_locator.W9y3dzm.App\Controller\AchatsController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\AchatsController"/>
       <argument>App\Controller\AchatsController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.W9y3dzm" method="withContext"/>
-    </service>
-    <service id=".service_locator.W9y3dzm.App\Controller\AdoptionsController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\AdoptionsController"/>
-      <argument>App\Controller\AdoptionsController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.W9y3dzm" method="withContext"/>
-    </service>
-    <service id=".service_locator.W9y3dzm.App\Controller\AnimauxController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\AnimauxController"/>
-      <argument>App\Controller\AnimauxController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.W9y3dzm" method="withContext"/>
     </service>
@@ -6689,12 +6639,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.G617SlR"/>
+      <argument type="service" id=".service_locator.3GKtnbC"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.G617SlR"/>
+      <argument type="service" id=".service_locator.3GKtnbC"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -7615,7 +7565,7 @@
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.0GV1BZZ" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.G617SlR"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.3GKtnbC"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
